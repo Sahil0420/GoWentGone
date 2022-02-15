@@ -1,0 +1,2 @@
+It prints the Output to Standard Output File by default it is Terminal/Console but in this example I have reffered the output.txt as stdout file.
+It is similar to Fprintln but we can use Format Specifiers like %s and %d and replace there values with vars in respective order.
