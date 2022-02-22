@@ -1,4 +1,4 @@
-# Python And Go
+# GoWentGone
 Translator.py is a small project developed by using CML(Cloud Machine Learning) in python language.
 This project is using speech_reconginition library to recognize the user's speech and gTTS to convert the speech into text and googletrasn library to 
 translate that text.
