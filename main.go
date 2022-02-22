@@ -4,6 +4,7 @@ import (
 	"basics/helpers"
 	"fmt"
 	"os"
+	"sync"
 )
 
 func areaOfSquare(side float64) float64 {
@@ -65,9 +66,9 @@ func main() {
 
 	// Importing Person struct a self declared datatype from the helpers package
 
-	var p1 = helpers.Person{"Johnny Depp", 56, "Actor"}
+	// var p1 = helpers.Person{"Johnny Depp", 56, "Actor"}
 	// above is keyless decalaration if you are confirm in the order below is decalaration with keys
-	// var p1 = helpers.Person{Name: "Shah Rukh Khan", Age: 60, Job: "Actor"}
+	var p1 = helpers.Person{Name: "Shah Rukh Khan", Age: 60, Job: "Actor"}
 
 	fmt.Printf("Name : %s , Age : %d , Job : %s", p1.Name, p1.Age, p1.Job)
 
@@ -77,5 +78,23 @@ func main() {
 	fmt.Println(p1.Unpack())
 	name, age, job := p1.Unpack()
 	fmt.Printf("After Unpacking Name :%s, Age = %d , Job = %s\n", name, age, job)
+	fmt.Println(p1.Describe())
+	p1.UpdateJob("Racer")
+	fmt.Println(p1.Describe())
+
+	c := helpers.Circle{Radius: 4}
+	helpers.PrintArea(c)
+	s := helpers.Square{Side: 4}
+	helpers.PrintArea(s)
+
+	// Concurrency Example
+	var wg sync.WaitGroup
+
+	wg.Add(2)
+	go helpers.PrintLetters(&wg)
+	go helpers.PrintNumber(&wg)
+
+	wg.Wait()
 
 }
+	
