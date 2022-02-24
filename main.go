@@ -2,6 +2,7 @@ package main
 
 import (
 	"basics/helpers"
+	"basics/sorting"
 	"fmt"
 	"os"
 	"sync"
@@ -96,5 +97,14 @@ func main() {
 
 	wg.Wait()
 
+	arr := []int{1, 7, 4, 6, 3, 8, 5, 2, 9, 21, 57, 23, 78, 101, 32, 34, 12, 15, 11}
+
+	fmt.Println("Arr : ", arr)
+
+	// sorting.BubbleSort(arr)
+	// sorting.Insertion_Sort(arr)
+	sorting.Selection_Sort(arr)
+
+	fmt.Println("Arr : ", arr)
+
 }
-	
