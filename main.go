@@ -103,8 +103,9 @@ func main() {
 
 	// sorting.BubbleSort(arr)
 	// sorting.Insertion_Sort(arr)
-	sorting.Selection_Sort(arr)
+	// sorting.Selection_Sort(arr)
+	res := sorting.MergeSort(arr)
 
-	fmt.Println("Arr : ", arr)
+	fmt.Println("Arr : ", res)
 
 }
