@@ -1,6 +1,7 @@
 package main
 
 import (
+	"basics/concurrency"
 	datastructure "basics/data_structure"
 	"fmt"
 )
@@ -21,5 +22,7 @@ func main() {
 	list.Traverse()
 	list.Reverse()
 	list.Traverse()
+
+	concurrency.Square_Channel()
 
 }
